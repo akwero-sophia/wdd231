@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 231 Course Home Page for Akwero Sophia">
+    <meta name="author" content="Akwero Sophia">
+    <title>WDD 231 Course Home Page - Akwero Sophia</title>
+    
+    <!-- Improved font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload critical font files -->
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2" crossorigin>
+    <!-- Use print media and onload to make non-blocking -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- Fallback for browsers with JavaScript disabled -->
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    </noscript>
+    
+    <!-- Update these preload directives to be more effective -->
+    <link rel="preload" href="styles/large.css?v=1.0" as="style">
+    <link rel="preload" href="styles/small.css?v=1.0" as="style">
+    <link rel="preload" href="styles/normalize.css?v=1.0" as="style">
+
+    <!-- Preload the Kampala LCP image with higher priority -->
+    <link rel="preload" href="images/kampala01.jpg?v=1.0" as="image" fetchpriority="high" media="(max-width: 767px)">
+
+    <!-- Try this alternative non-blocking CSS loading approach -->
+    <link rel="stylesheet" href="styles/normalize.css?v=1.0" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="styles/small.css?v=1.0">
+    <link rel="stylesheet" href="styles/large.css?v=1.0" media="print" onload="this.media='all'">
+    
+    <!-- Scripts with defer attribute -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <div class="profile-wrapper">
+                <picture>
+                    <!-- Mobile version (smaller file) -->
+                    <source srcset="images/profile01.jpg?v=1.0" media="(max-width: 767px)">
+                    <!-- Desktop version (original higher quality) -->
+                    <source srcset="images/profile.jpg?v=1.0" media="(min-width: 768px)">
+                    <!-- Fallback for older browsers -->
+                    <img src="images/profile.jpg?v=1.0" alt="Profile Picture" class="profile-image" />
+                </picture>
+                <span class="profile-name">Akwero Sophia</span>
+            </div>
+            <button id="menu-btn">&#9776;</button>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav id="nav-bar">
+            <a href="index.html" class="active">Home</a>
+            <a href="chamber.html">Chamber</a>
+            <a href="https://github.com/Owen-kasule" target="_blank">GitHub Profile</a>
+            <a href="https://www.linkedin.com/in/owen-muhereza-kasule-teachrooot/" target="_blank">LinkedIn</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>WDD 231 Course Home Page - Akwero Sophia</h1>
+        <h2 class="page-subtitle">Home</h2>
+
+        <!-- Course Work and Location Section -->
+        <div class="grid-container">
+            <!-- Course Work -->
+            <section class="card">
+                <h2>Course Work</h2>
+                <ul>
+                    <li>HTML and CSS Fundamentals</li>
+                    <li>JavaScript Essentials</li>
+                    <li>Web Design Principles</li>
+                </ul>
+            </section>
+
+            <!-- Location Section -->
+            <section class="card">
+                <h2>Kampala, Uganda</h2>
+                <picture>
+                    <!-- Mobile WebP version (you just added this) -->
+                    <source srcset="images/kampala01.webp" type="image/webp" media="(max-width: 767px)">
+                    
+                    <!-- Mobile JPG version -->
+                    <source srcset="images/kampala01.jpg?v=1.0" media="(max-width: 767px)">
+                    
+                    <!-- Desktop versions - REMOVE THESE if files don't exist -->
+                    <!-- <source srcset="images/kampala.webp" type="image/webp" media="(min-width: 768px)"> -->
+                    <!-- <source srcset="images/kampala.jpg?v=1.0" media="(min-width: 768px)"> -->
+                    
+                    <!-- IMPORTANT: Change fallback to kampala01.jpg since that's what you have -->
+                    <img src="images/kampala01.jpg?v=1.0" alt="Kampala, Uganda" width="320" height="180" 
+                         fetchpriority="high" loading="eager">
+                </picture>
+                <p>City of Seven Hills</p>
+            </section>
+        </div>
+
+        <!-- Certificate Section -->
+        <section class="certificate">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="buttons">
+                <button onclick="filterCourses('all')">All</button>
+                <button onclick="filterCourses('CSE')">CSE</button>
+                <button onclick="filterCourses('WDD')">WDD</button>
+            </div>
+            <div id="course-list"></div>
+            <p>Total Credits: <span id="total-credits">0</span></p>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; <span id="year"></span> Akwero Sophia | Kampala, Uganda 🇺🇬</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
