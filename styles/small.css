@@ -1,0 +1,309 @@
+/* Put this at the top of your CSS file to load critical properties first */
+:root {
+    --bg-color: #f4f4f9;
+    --card-bg: #ffffff;
+    --header-bg: #2c5d84;
+    --text-color: #333333;
+}
+
+/* Add to top of small.css file for better font loading */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Poppins Regular'), local('Poppins-Regular');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Poppins Bold'), local('Poppins-Bold');
+}
+
+/* small.css */
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+}
+
+/* Reset and fix header styling */
+header {
+    background-color: #2c5d84;
+    padding: 15px;
+    color: white;
+}
+
+/* Center the header content properly */
+.header-content {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100px;
+    width: 100%;
+}
+
+/* Fix profile wrapper */
+.profile-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* No margins or positioning that could offset centering */
+}
+
+/* Profile wrapper image - remove duplicates */
+.profile-image {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+
+.profile-wrapper h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin: 0;
+}
+
+/* Profile name - remove duplicates */
+.profile-name {
+    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    min-height: 1.5em;
+    letter-spacing: -0.01em;
+}
+
+/* Make sure the menu button doesn't affect centering */
+#menu-btn {
+    position: absolute;
+    right: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    /* Make sure it doesn't push other elements */
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+/* Navigation Bar */
+#nav-bar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#nav-bar a {
+    color: white;
+    background-color: #1a1a1a;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+#nav-bar a:hover,
+#nav-bar a:focus {
+    background-color: #444;
+}
+
+#nav-bar a.active {
+    background-color: #d4af37;
+    color: #000;
+}
+
+/* Show navbar */
+#nav-bar.open {
+    display: flex;
+}
+
+/* Center main h1 */
+main h1 {
+    text-align: center;
+    font-size: 1.5rem; /* Smaller size on mobile for faster rendering */
+    font-family: Arial, sans-serif; /* System font fallback first */
+    font-family: 'Poppins', Arial, sans-serif; /* Poppins will apply when loaded */
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 100%;
+    padding: 0 10px;
+    will-change: transform; /* Hint to browser to create a separate layer */
+    backface-visibility: hidden; /* Boost performance by using GPU */
+}
+
+/* Center the "Home" h2 heading */
+main h2:first-of-type {
+    text-align: center;
+}
+
+/* Adjust grid for equal-sized cards in vertical layout on mobile */
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Spacing between cards */
+    padding: 10px;
+    margin: 0 auto;
+}
+
+/* Ensure cards are the same size and full width on mobile */
+.card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    box-sizing: border-box; /* Include padding in width calculation */
+    margin-bottom: 10px; /* Space between stacked cards */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Optimize LCP by improving image rendering performance */
+.card picture {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    contain: content; /* Helps browser optimize rendering */
+    content-visibility: auto; /* Optimize rendering of off-screen content */
+}
+
+/* CSS for image to improve rendering performance */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    will-change: transform; /* Hint to browser to optimize */
+    transform: translateZ(0); /* Force GPU acceleration */
+}
+
+/* Course Work - Make list bulleted and left-aligned */
+.card ul {
+    list-style-type: disc; /* Add bullets */
+    text-align: left; /* Left align text */
+    padding-left: 20px; /* Add padding for bullets */
+}
+
+.card li {
+    margin-bottom: 5px; /* Add spacing between list items */
+}
+
+.card h2 {
+    background-color: #244e6f; /* Darkened from #2c5d84 */
+    color: #ffffff; /* Pure white */
+    padding: 10px;
+    margin: -15px -15px 10px -15px;
+    border-radius: 8px 8px 0 0;
+    font-size: 1rem;
+}
+
+/* Certificate Section */
+.certificate {
+    padding: 15px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.certificate h2 {
+    text-align: center;
+    color: #214c70; /* Darkened from #2c5d84 */
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+/* Course Filter Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.buttons button {
+    background-color: #244e6f; /* Darkened from #2c5d84 */
+    color: #ffffff; /* Pure white */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #1a4c68;
+}
+
+/* Course List - Vertical layout for mobile */
+#course-list {
+    display: flex;
+    flex-direction: column; /* Stack course buttons vertically on mobile */
+    gap: 8px;
+    align-items: center; /* Center the buttons */
+}
+
+.course-btn {
+    background-color: #793c10; /* Darkened from #8b4513 */
+    color: #ffffff; /* Pure white */
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: 100%; /* Full width on mobile */
+    max-width: 200px; /* Limit maximum width */
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.course-btn:hover {
+    background-color: #5a3220;
+}
+
+.course-btn.completed {
+    background-color: #4e2a1a; /* Darkened from #5a3220 */
+}
+
+/* Center total credits text */
+.certificate p {
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #244e6f; /* Darkened from #2c5d84 */
+    color: #ffffff; /* Pure white */
+    padding: 12px;
+    text-align: center;
+}
+
+.page-subtitle {
+    text-align: center;
+}
