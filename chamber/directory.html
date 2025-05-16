@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chamber Directory for businesses">
+    <meta name="author" content="Akwero Sophia">
+    <meta property="og:title" content="Chamber of Commerce Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://Akwero-Sophia.github.io/wdd231/chamber/images/chamber-logo.png">
+    <meta property="og:url" content="https://Akwero-Sophia.github.io/wdd231/chamber/directory.html">
+    <title>Chamber of Commerce Directory - Kampala</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/main.js" defer></script>
+    <link rel="preload" as="image" href="images/chamber-logo.webp" type="image/webp">
+    <link rel="preload" as="image" href="images/chamber-logo.png" type="image/png">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+        <div class="nav-toggle" id="navToggle">
+            <span class="hamburger"></span>
+        </div>
+    </header>
+    
+    <main>
+        <div class="logo">
+            <picture>
+                <source srcset="images/chamber-logo.webp" type="image/webp">
+                <img src="images/chamber-logo.png" alt="Chamber Logo" width="80" height="80" loading="eager">
+            </picture>
+            <h1>Chamber of Commerce - Kampala</h1>
+        </div>
+        
+        <section id="member-list">
+            <h2 class="grid-header">Chamber Directory Members</h2>
+            <div class="members-container">
+                <!-- Member cards will be inserted here -->
+            </div>
+        </section>
+
+        <div class="view-toggle">
+            <button id="grid-view" class="active" onclick="toggleView('grid')">Grid View</button>
+            <button id="list-view" onclick="toggleView('list')">List View</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Akwero Sophia | Kampala, Uganda</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
