@@ -1,7 +1,7 @@
 /* Join page specific styles */
 
 /* Inherit base styles from main CSS */
-@import url("styles.css");
+@import url("../styles.css");
 
 /* Join page container layout */
 .join-container {
