@@ -1,7 +1,7 @@
 /* Thank you page specific styles */
 
 /* Inherit base styles from main CSS */
-@import url("styles.css");
+@import url("style.css");
 
 /* Thank you page container */
 .thank-you-container {
