@@ -724,11 +724,11 @@ nav a.active::after {
 }
 
 .level-silver {
-    border-left: 5px solid #c0c0c0;
+    border-left: 5px solid #dfc9c934;
 }
 
 .level-gold {
-    border-left: 5px solid #ffd700;
+    border-left: 5px solid #fcd80ceb;
 }
 
 .level-card h3 {
