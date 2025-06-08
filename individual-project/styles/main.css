@@ -1,7 +1,3 @@
-body {
-  font-family: 'Roboto', sans-serif;
-  /* other styles */
-}
 /* Base Styles */
 :root {
   --primary: #2e7d32;
@@ -16,11 +12,6 @@ body {
 
 body {
   font-family: 'Roboto', sans-serif;
-  /* other styles */
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--secondary);
   color: var(--text);
   line-height: 1.6;
@@ -41,7 +32,7 @@ header {
   z-index: 100;
 }
 
-/* ✅ Fix: Add navbar styling */
+/* ✅ Navbar styling */
 .navbar {
   display: flex;
   align-items: center;
@@ -121,7 +112,7 @@ nav a.active {
   border-bottom: 3px solid var(--primary);
 }
 
-/* ✅ Fix: Add featured-plants section */
+/* ✅ Featured plants section */
 .featured-plants {
   padding: 2rem;
   background-color: #fff;
