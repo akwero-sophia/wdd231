@@ -1,65 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Join our community of urban gardeners. Share questions and tips!" />
-  <meta name="author" content="Your Name" />
-  <meta property="og:title" content="GreenThumb Community" />
-  <meta property="og:description" content="Connect with fellow gardeners and exchange ideas." />
-  <title>GreenThumb Gardening | Community</title>
-  <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" href="styles/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenThumb Gardening - Community</title>
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
   <header>
-    <nav class="nav">
-      <div class="logo">GreenThumb</div>
-      <button id="menuToggle" class="hamburger" aria-label="Toggle Navigation">&#9776;</button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="guides.html">Guides</a></li>
-        <li><a href="community.html">Community</a></li>
-      </ul>
-    </nav>
+    <!-- Same header as index.html -->
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Community Forum</h1>
-      <p>Ask questions, share success stories, and learn from other gardeners.</p>
-    </section>
-
-    <section class="form-section">
-      <form action="form-success.html" method="GET">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required />
-
-        <label for="comment">Comment:</label>
-        <textarea id="comment" name="comment" required></textarea>
-
-        <button type="submit">Post</button>
-      </form>
-    </section>
-
-    <section>
-      <button id="infoBtn">Show Tip of the Day</button>
-      <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="modal-content">
-          <h2 id="modalTitle">Gardening Tip</h2>
-          <p>Water your plants in the early morning to reduce evaporation.</p>
-          <button id="closeModal">Close</button>
-        </div>
-      </div>
-    </section>
+    <h1>Community Forum</h1>
+    <form id="communityForm">
+      <label for="postTitle">Title:</label>
+      <input type="text" id="postTitle" required>
+      
+      <label for="postContent">Content:</label>
+      <textarea id="postContent" required></textarea>
+      
+      <button type="submit">Post</button>
+    </form>
   </main>
 
   <footer>
-    <p>&copy; 2025 GreenThumb Gardening</p>
-    <a href="attribution.html">Attributions</a>
+    <!-- Same footer as index.html -->
   </footer>
 
-  <script src="scripts/modal.js" type="module"></script>
   <script src="scripts/main.js" type="module"></script>
 </body>
 </html>
