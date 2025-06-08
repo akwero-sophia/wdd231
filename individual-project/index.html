@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GreenThumb Gardening: Tips, tutorials, and community for urban gardeners." />
+  <meta name="author" content="Your Name" />
+  <meta property="og:title" content="GreenThumb Gardening" />
+  <meta property="og:description" content="Grow smarter with our expert gardening tips." />
+  <meta property="og:image" content="images/preview.jpg" />
+  <meta property="og:url" content="https://greenthumbgardens.org" />
+  <title>GreenThumb Gardening</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script type="module" src="scripts/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="logo">GreenThumb</div>
+      <button id="menuToggle" class="hamburger" aria-label="Toggle Navigation">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="community.html">Community</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="images/hero.jpg" alt="Urban Garden on a Balcony" loading="lazy" />
+      <h1>Welcome to GreenThumb Gardening</h1>
+    </section>
+
+    <!-- 🔽 Filter Dropdown -->
+    <section style="text-align: center; margin: 2rem;">
+      <label for="filterSelect"><strong>Filter by Plant Type:</strong></label>
+      <select id="filterSelect" style="padding: 0.5rem; font-size: 1rem;">
+        <option value="all">All</option>
+        <option value="indoor">Indoor</option>
+        <option value="outdoor">Outdoor</option>
+      </select>
+    </section>
+
+    <!-- 🌱 Plant Previews -->
+    <section class="preview-section" id="plantList">
+      <!-- JavaScript dynamically inserts 15 plant cards here -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GreenThumb Gardening</p>
+    <a href="attribution.html">Attributions</a>
+  </footer>
+</body>
+</html>
