@@ -13,10 +13,12 @@ body {
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
 }
+
 body {
   font-family: 'Roboto', sans-serif;
   /* other styles */
 }
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--secondary);
