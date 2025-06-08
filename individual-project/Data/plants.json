@@ -8,7 +8,7 @@
     "difficulty": "Easy",
     "harvestTime": "6-8 weeks",
     "tips": "Pinch off flowers to prolong leaf growth",
-    "image": "basil.webp",
+    "image": "basil.jpg",
     "indoor": true,
     "containerSize": "6-8 inch pot"
   },
@@ -21,7 +21,7 @@
     "difficulty": "Very easy",
     "harvestTime": "4-6 weeks",
     "tips": "Grows aggressively - best in containers",
-    "image": "mint.webp",
+    "image": "mint.jpg",
     "indoor": true,
     "containerSize": "8-10 inch pot"
   },
@@ -34,7 +34,7 @@
     "difficulty": "Medium",
     "harvestTime": "10-12 weeks",
     "tips": "Use cages for support",
-    "image": "cherry-tomatoes.webp",
+    "image": "cherry-tomatoes.jpg",
     "indoor": false,
     "containerSize": "5-gallon bucket"
   },
@@ -47,7 +47,7 @@
     "difficulty": "Easy",
     "harvestTime": "3-4 weeks",
     "tips": "Harvest outer leaves first",
-    "image": "lettuce.webp",
+    "image": "lettuce.jpg",
     "indoor": true,
     "containerSize": "Shallow 12-inch planter"
   },
@@ -60,7 +60,7 @@
     "difficulty": "Very easy",
     "harvestTime": "N/A (Ornamental)",
     "tips": "Purifies indoor air",
-    "image": "pothos.webp",
+    "image": "pothos.jpg",
     "indoor": true,
     "containerSize": "6-8 inch hanging basket"
   },
@@ -73,7 +73,7 @@
     "difficulty": "Medium",
     "harvestTime": "8-10 weeks",
     "tips": "Use strawberry pots for space efficiency",
-    "image": "strawberries.webp",
+    "image": "strawberries.jpg",
     "indoor": false,
     "containerSize": "12-inch deep pot"
   },
@@ -86,7 +86,7 @@
     "difficulty": "Easy",
     "harvestTime": "6-8 weeks",
     "tips": "Cut leaves to 2 inches for regrowth",
-    "image": "chives.webp",
+    "image": "chives.jpg",
     "indoor": true,
     "containerSize": "6-inch pot"
   },
@@ -99,7 +99,7 @@
     "difficulty": "Very easy",
     "harvestTime": "1-2 weeks",
     "tips": "Harvest when 2-3 inches tall",
-    "image": "microgreens.webp",
+    "image": "microgreens.jpg",
     "indoor": true,
     "containerSize": "Shallow tray"
   },
@@ -112,7 +112,7 @@
     "difficulty": "Easy",
     "harvestTime": "N/A (Ornamental)",
     "tips": "Produces baby spiderettes",
-    "image": "spider-plant.webp",
+    "image": "spider-plant.jpg",
     "indoor": true,
     "containerSize": "6-8 inch pot"
   },
@@ -125,7 +125,7 @@
     "difficulty": "Very easy",
     "harvestTime": "3-4 weeks",
     "tips": "Fastest-growing vegetable",
-    "image": "radishes.webp",
+    "image": "radishes.jpg",
     "indoor": false,
     "containerSize": "12-inch deep planter"
   }
