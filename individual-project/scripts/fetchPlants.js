@@ -1,7 +1,7 @@
 export async function fetchPlants() {
   try {
     const response = await fetch('data/plants.json');
-    if (!response.ok) throw fetch('data/planta.json');
+    if (!response.ok) throw new error('Failed to fetch plants');
     
     const plants = await response.json();
     displayPlants(plants.slice(0, 15)); // Show first 15 plants
