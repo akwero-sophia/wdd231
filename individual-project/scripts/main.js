@@ -24,10 +24,9 @@ let allPlants = [];
 if (plantsContainer) {
   fetchPlants()
     .then(plants => {
-      allPlants = plants; // Save fetched plants for filtering
+      allPlants = plants;
       displayFilteredPlants();
 
-      // Add event listeners for search and filters
       if (searchInput) searchInput.addEventListener('input', displayFilteredPlants);
       if (typeFilter) typeFilter.addEventListener('change', displayFilteredPlants);
       if (indoorFilter) indoorFilter.addEventListener('change', displayFilteredPlants);
@@ -37,7 +36,7 @@ if (plantsContainer) {
     });
 }
 
-// Function to filter and display plants based on inputs
+// Filter and display plants
 function displayFilteredPlants() {
   let filtered = allPlants;
 
@@ -59,7 +58,6 @@ function displayFilteredPlants() {
     filtered = filtered.filter(plant => String(plant.indoor) === indoorValue);
   }
 
-  // Render the filtered plants
   plantsContainer.innerHTML = filtered.map(plant => `
     <div class="plant-card" data-id="${plant.id}">
       <img src="images/plants/${plant.image}" alt="${plant.name}" loading="lazy" />
@@ -71,9 +69,9 @@ function displayFilteredPlants() {
   `).join('');
 }
 
-// Setup modal for plant details
+// Setup modal
 setupModal();
 
-// Local Storage: Track user's last visit (no console output in production)
+// Save last visit (no console output)
 const lastVisit = localStorage.getItem('lastVisit');
 localStorage.setItem('lastVisit', new Date().toLocaleString());
