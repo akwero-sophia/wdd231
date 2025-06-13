@@ -49,8 +49,29 @@
 
     <section class="featured-plants">
       <h2>Popular Plants</h2>
+
+      <!-- Search and filter UI -->
+      <div class="filters">
+        <input type="text" id="searchInput" placeholder="Search plants by name..." aria-label="Search plants" />
+
+        <select id="typeFilter" aria-label="Filter by plant type">
+          <option value="">All Types</option>
+          <option value="Herb">Herb</option>
+          <option value="Vegetable">Vegetable</option>
+          <option value="Leafy Green">Leafy Green</option>
+          <option value="Houseplant">Houseplant</option>
+          <option value="Fruit">Fruit</option>
+        </select>
+
+        <select id="indoorFilter" aria-label="Filter by indoor or outdoor">
+          <option value="">All</option>
+          <option value="true">Indoor</option>
+          <option value="false">Outdoor</option>
+        </select>
+      </div>
+
       <div class="plants-container" id="plantsContainer">
-        <!-- Images here should be lazy-loaded via JavaScript -->
+        <!-- Plants will be loaded here by JavaScript -->
       </div>
     </section>
   </main>
@@ -58,10 +79,9 @@
   <footer>
     <p>&copy; <span id="currentYear"></span> GreenThumb Gardening</p>
     <p><a href="attributions.html">Attributions</a></p>
-    <p>Video Demo: <a href="https://youtu.be/O3yRXhHKIfE?si=6ha5pYRn6MTI3TPw" target="_blank">Watch Here</a></p>
+    <p>Video Demo: <a href="https://youtu.be/O3yRXhHKIfE?si=6ha5pYRn6MTI3TPw" target="_blank" rel="noopener noreferrer">Watch Here</a></p>
   </footer>
 
   <script src="scripts/main.js" type="module"></script>
 </body>
 </html>
- 

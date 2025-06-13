@@ -18,8 +18,15 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+main {
+  flex: 1;
+}
+
+/* Header */
 header {
   background-color: rgb(180, 223, 182);
   padding: 1rem;
@@ -104,6 +111,7 @@ nav a.active {
   color: white;
 }
 
+/* Hero Section */
 .hero img {
   width: 100%;
   height: auto;
@@ -140,6 +148,61 @@ nav a.active {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* ✅ Form Styling (helps form UX even if action is empty) */
+form {
+  background-color: #fff;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--primary-light);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+form button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Posts section */
+#postsSection {
+  padding: 2rem;
+}
+
+.post {
+  background-color: #ffffff;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   .hamburger {
@@ -172,6 +235,11 @@ nav a.active {
     padding: 1rem;
     gap: 1.5rem;
   }
+
+  form {
+    padding: 1rem;
+    margin: 1rem;
+  }
 }
 
 /* Smooth scrolling */
@@ -181,7 +249,9 @@ html {
 
 /* Focus styles for accessibility */
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
   outline: 2px solid var(--primary-dark);
   outline-offset: 2px;
 }

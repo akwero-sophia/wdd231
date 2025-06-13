@@ -1,29 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GreenThumb Gardening - Guides</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
   <header>
-    <!-- Same header as index.html -->
+    <div class="logo">
+      <img src="image/green-thumb-logo.jpeg" alt="green-thumb-Logo" width="100" height="100" loading="lazy" />
+    </div>
+    <button class="hamburger" aria-label="Menu">☰</button>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="guides.html" class="active">Guides</a></li>
+        <li><a href="community.html">Community</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <h1>Gardening Guides</h1>
-    <div class="guide-cards">
-      <article>
-        <h2>Container Gardening</h2>
-        <p>Learn how to grow plants in small spaces.</p>
-      </article>
-      <!-- More guides -->
-    </div>
+    <h1>Guides</h1>
+
+    <form id="communityForm" action="#" novalidate>
+      <label for="postTitle">Title:</label>
+      <input type="text" id="postTitle" name="postTitle" required maxlength="100" />
+
+      <label for="postContent">Content:</label>
+      <textarea id="postContent" name="postContent" required rows="5" maxlength="1000"></textarea>
+
+      <button type="submit">Post</button>
+    </form>
+
+    <section id="postsSection">
+      <h2>Posts</h2>
+      <div id="postsContainer">
+        <!-- Posts will appear here -->
+      </div>
+    </section>
   </main>
 
   <footer>
-    <!-- Same footer as index.html -->
+    <p>&copy; <span id="currentYear"></span> GreenThumb Gardening</p>
+    <p><a href="attributions.html">Attributions</a></p>
+    <p>Video Demo: <a href="https://youtu.be/O3yRXhHKIfE?si=6ha5pYRn6MTI3TPw" target="_blank" rel="noopener noreferrer">Watch Here</a></p>
   </footer>
+
+  <script type="module">
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav ul');
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+
+    // Community form and posts logic
+    const form = document.getElementById('communityForm');
+    const postsContainer = document.getElementById('postsContainer');
+
+    // Load posts from localStorage
+    function loadPosts() {
+      const posts = JSON.parse(localStorage.getItem('communityPosts')) || [];
+      postsContainer.innerHTML = posts.length
+        ? posts.map(post => `
+            <article class="post">
+              <h3>${escapeHtml(post.title)}</h3>
+              <p>${escapeHtml(post.content)}</p>
+              <small>Posted on: ${new Date(post.date).toLocaleString()}</small>
+            </article>
+          `).join('')
+        : '<p>No posts yet. Be the first to share!</p>';
+    }
+
+    // Escape HTML to prevent XSS
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // Save new post
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const title = form.postTitle.value.trim();
+      const content = form.postContent.value.trim();
+
+      if (!title || !content) {
+        alert('Please fill out both Title and Content.');
+        return;
+      }
+
+      const posts = JSON.parse(localStorage.getItem('communityPosts')) || [];
+      posts.unshift({
+        title,
+        content,
+        date: new Date().toISOString()
+      });
+
+      localStorage.setItem('communityPosts', JSON.stringify(posts));
+      form.reset();
+      loadPosts();
+    });
+
+    // Initial load
+    loadPosts();
+  </script>
 </body>
 </html>

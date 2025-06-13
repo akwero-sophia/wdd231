@@ -12,10 +12,74 @@ hamburger.addEventListener('click', () => {
   nav.classList.toggle('show');
 });
 
-// Load plants on homepage
-if (document.getElementById('plantsContainer')) {
-  fetchPlants();
+// References to filters and container
+const plantsContainer = document.getElementById('plantsContainer');
+const searchInput = document.getElementById('searchInput');
+const typeFilter = document.getElementById('typeFilter');
+const indoorFilter = document.getElementById('indoorFilter');
+
+let allPlants = [];
+
+// Load plants and set up filter listeners
+if (plantsContainer) {
+  fetchPlants()
+    .then(plants => {
+      allPlants = plants; // Save fetched plants for filtering
+      displayFilteredPlants();
+
+      // Add event listeners for search and filters
+      if (searchInput) searchInput.addEventListener('input', displayFilteredPlants);
+      if (typeFilter) typeFilter.addEventListener('change', displayFilteredPlants);
+      if (indoorFilter) indoorFilter.addEventListener('change', displayFilteredPlants);
+    })
+    .catch(err => {
+      plantsContainer.innerHTML = '<p>Failed to load plants. Please try again later.</p>';
+      console.error(err);
+    });
+}
+
+// Function to filter and display plants based on inputs
+function displayFilteredPlants() {
+  let filtered = allPlants;
+
+  const searchTerm = searchInput?.value.toLowerCase() || '';
+  const typeValue = typeFilter?.value || '';
+  const indoorValue = indoorFilter?.value;
+
+  if (searchTerm) {
+    filtered = filtered.filter(plant =>
+      plant.name.toLowerCase().includes(searchTerm)
+    );
+  }
+
+  if (typeValue) {
+    filtered = filtered.filter(plant => plant.type === typeValue);
+  }
+
+  if (indoorValue === 'true' || indoorValue === 'false') {
+    filtered = filtered.filter(plant => String(plant.indoor) === indoorValue);
+  }
+
+  // Use the displayPlants function from fetchPlants.js or reimplement here
+  plantsContainer.innerHTML = filtered.map(plant => `
+    <div class="plant-card" data-id="${plant.id}">
+      <img src="images/plants/${plant.image}" alt="${plant.name}" loading="lazy" />
+      <h3>${plant.name}</h3>
+      <p>Type: ${plant.type}</p>
+      <p>Sunlight: ${plant.sunlight}</p>
+      <p>Water: ${plant.water}</p>
+    </div>
+  `).join('');
 }
 
 // Setup modal for plant details
 setupModal();
+
+// ✅ Local Storage: Track user's last visit
+const lastVisit = localStorage.getItem('lastVisit');
+if (lastVisit) {
+  console.log(`Welcome back! Your last visit was on ${lastVisit}`);
+} else {
+  console.log('Welcome to GreenThumb Gardening!');
+}
+localStorage.setItem('lastVisit', new Date().toLocaleString());
