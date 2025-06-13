@@ -32,9 +32,8 @@ if (plantsContainer) {
       if (typeFilter) typeFilter.addEventListener('change', displayFilteredPlants);
       if (indoorFilter) indoorFilter.addEventListener('change', displayFilteredPlants);
     })
-    .catch(err => {
+    .catch(() => {
       plantsContainer.innerHTML = '<p>Failed to load plants. Please try again later.</p>';
-      console.error(err);
     });
 }
 
@@ -60,7 +59,7 @@ function displayFilteredPlants() {
     filtered = filtered.filter(plant => String(plant.indoor) === indoorValue);
   }
 
-  // Use the displayPlants function from fetchPlants.js or reimplement here
+  // Render the filtered plants
   plantsContainer.innerHTML = filtered.map(plant => `
     <div class="plant-card" data-id="${plant.id}">
       <img src="images/plants/${plant.image}" alt="${plant.name}" loading="lazy" />
@@ -75,11 +74,6 @@ function displayFilteredPlants() {
 // Setup modal for plant details
 setupModal();
 
-// ✅ Local Storage: Track user's last visit
+// Local Storage: Track user's last visit (no console output in production)
 const lastVisit = localStorage.getItem('lastVisit');
-if (lastVisit) {
-  console.log(`Welcome back! Your last visit was on ${lastVisit}`);
-} else {
-  console.log('Welcome to GreenThumb Gardening!');
-}
 localStorage.setItem('lastVisit', new Date().toLocaleString());

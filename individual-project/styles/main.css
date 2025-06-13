@@ -255,3 +255,16 @@ textarea:focus-visible {
   outline: 2px solid var(--primary-dark);
   outline-offset: 2px;
 }
+
+/* ✅ ADDED: Filters class fix */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  background-color: var(--primary-light);
+  border-radius: 8px;
+  justify-content: center;
+}
